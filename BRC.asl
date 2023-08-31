@@ -62,6 +62,7 @@ init
 {
 	// Set initial values
 	vars.gameMode = 0;	// Set the game mode to None = 0, Any% = 1, Glitchless = 2
+	refreshRate = 240;
 }
 
 startup
@@ -192,7 +193,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	(((current.stageID == 7 && current.sbHealth == 0) && (current.objectiveID == 11 || current.objectiveID == 13)) && settings["finalAny"]))
+	(((current.stageID == 7 && current.sbHealth == 0 && old.sbHealth == 1) && (current.objectiveID == 11 || current.objectiveID == 13)) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -233,7 +234,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && current.sbHealth == 0) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (old.sbHealth == 1 && current.sbHealth == 0)) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
