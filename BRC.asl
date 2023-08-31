@@ -158,7 +158,7 @@ split
 	if((vars.gameMode == 1) &&
 	((current.stageID == 5 && old.stageID == 8) && settings["prologueAny"])
 	||
-  	(((current.stageID == 7 && old.stageID == 5) && (current.objectiveID == 0 || current.objectiveID == 1)) && settings["hideoutAny"]) // hideout skip
+  	((current.stageID == 7 && old.stageID == 5 && ((current.objectiveID == 0 && old.objectiveID == 0) || (current.objectiveID == 1 && old.objectiveID == 1))) && settings["hideoutAny"]) // hideout skip
   	||
 	((current.stageID == 4 && old.stageID == 5 && current.objectiveID == 2) && settings["hideoutAny"])
 	||
