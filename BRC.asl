@@ -62,11 +62,12 @@ init
 {
 	// Set initial values
 	vars.gameMode = 0;	// Set the game mode to None = 0, Any% = 1, Glitchless = 2
-	refreshRate = 240;
 }
 
 startup
 {
+	refreshRate = 240;
+
 	settings.CurrentDefaultParent = null;
 	settings.Add("gameMode", true, "Game Modes");
 	settings.SetToolTip("gameMode", "Do not uncheck this box");
