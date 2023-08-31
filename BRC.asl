@@ -4,7 +4,7 @@ BOMB RUSH CYBERFUNK AUTOSPLITTER (PC)
 -------------------------------------
 
 Created by: Austin 'Auddy' Davenport and Loomeh
-Special thanks to: YellowBoy and Sooldy
+Special thanks to: kitcarsonn, Helix13, YellowBoy and Sooldy
 */
 
 
@@ -85,7 +85,6 @@ startup
 	
 	settings.CurrentDefaultParent = "stagesAny";
 	settings.Add("prologueAny",true,"Prologue End / Hideout Start");
-  settings.Add("mataanSkip",false,"Early Game Mataan Skip");
 	settings.Add("hideoutAny",true,"Hideout Tutorial End / Versum Start");
 	settings.Add("versumAny",true,"Versum Hill End / Dream Sequence 1 Start");
 	settings.Add("chapter1Any",true,"Chapter 1 End");
@@ -159,11 +158,13 @@ split
 	if((vars.gameMode == 1) &&
 	((current.stageID == 5 && old.stageID == 8) && settings["prologueAny"])
 	||
-  (((current.stageID == 7 && old.stageID == 5) && (current.objectiveID == 0 || current.objectiveID == 1)) && settings["mataanSkip"])
-  ||
+  	(((current.stageID == 7 && old.stageID == 5) && (current.objectiveID == 0 || current.objectiveID == 1)) && settings["hideoutAny"]) // hideout skip
+  	||
 	((current.stageID == 4 && old.stageID == 5 && current.objectiveID == 2) && settings["hideoutAny"])
 	||
 	((current.stageID == 4 && current.objectiveID == 3 && old.objectiveID == 2) && settings["versumAny"])
+	||
+	((current.stageID == 4 && current.objectiveID == 3 && old.objectiveID == 0) && settings["versumAny"]) // Additional fix for hideout skip
 	||
 	((current.stageID == 5 && old.stageID == 4 && current.objectiveID == 4) && settings["chapter1Any"])
 	||
@@ -187,9 +188,11 @@ split
 	||
 	((current.stageID == 9 && current.objectiveID == 10 && old.objectiveID == 9) && settings["pyramidAny"])
 	||
+	((current.stageID == 9 && current.objectiveID == 10 && old.objectiveID == 15) && settings["pyramidAny"]) // Pyramid skip
+	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && current.sbHealth == 0 && old.sbHealth == 1) && settings["finalAny"]))
+	((current.stageID == 7 && current.sbHealth == 0) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -230,7 +233,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && current.sbHealth == 0 && old.sbHealth == 1) && settings["finalGlitchless"]))
+	((current.stageID == 7 && current.sbHealth == 0) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
