@@ -4,7 +4,7 @@ BOMB RUSH CYBERFUNK AUTOSPLITTER (PC)
 -------------------------------------
 
 Created by: Austin 'Auddy' Davenport and Loomeh
-Special thanks to: kitcarsonn, Helix13, YellowBoy and Sooldy
+Special thanks to: kitcarsonn, Christian Royle, Helix13, YellowBoy and Sooldy
 */
 
 
@@ -158,7 +158,7 @@ split
 	if((vars.gameMode == 1) &&
 	((current.stageID == 5 && old.stageID == 8) && settings["prologueAny"])
 	||
-  	((current.stageID == 7 && old.stageID == 5 && ((current.objectiveID == 0 && old.objectiveID == 0) || (current.objectiveID == 1 && old.objectiveID == 1))) && settings["hideoutAny"]) // hideout skip
+  	((current.stageID == 7 && old.stageID == 5 && (current.objectiveID == 0 || current.objectiveID == 1)) && settings["hideoutAny"]) // hideout skip
   	||
 	((current.stageID == 4 && old.stageID == 5 && current.objectiveID == 2) && settings["hideoutAny"])
 	||
@@ -192,7 +192,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && current.sbHealth == 0) && settings["finalAny"]))
+	(((current.stageID == 7 && current.sbHealth == 0) && (current.objectiveID == 11 || current.objectiveID == 13)) && settings["finalAny"]))
 	{
 		return true;
 	}
