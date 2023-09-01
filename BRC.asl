@@ -194,7 +194,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && current.sbHealth < 1 && old.sbHealth >= 1 && settings["finalAny"]))
+	((current.stageID == 7 && (old.sbHealth >= 1 && current.sbHealth < 1)) && settings["finalAny"]))
 	{
 		return true;
 	}
