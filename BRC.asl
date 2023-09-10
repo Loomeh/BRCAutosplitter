@@ -195,7 +195,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1 || current.SnakeBossHealth == 0 && old.SnakeBossHealth == 2 && !inGraffitiGame)) && settings["finalAny"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1 || current.SnakeBossHealth == 0 && old.SnakeBossHealth == 2 && !current.inGraffitiGame)) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -236,7 +236,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1 || current.SnakeBossHealth == 0 && old.SnakeBossHealth == 2 && !inGraffitiGame)) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1 || current.SnakeBossHealth == 0 && old.SnakeBossHealth == 2 && !current.inGraffitiGame)) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
