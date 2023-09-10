@@ -66,7 +66,7 @@ init
 
 startup
 {
-	refreshRate = 180;
+	refreshRate = 200;
 
 	settings.CurrentDefaultParent = null;
 	settings.Add("gameMode", true, "Game Modes");
@@ -194,7 +194,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1)) && settings["finalAny"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth >= 1)) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -235,7 +235,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1)) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth >= 1)) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
