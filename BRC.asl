@@ -4,7 +4,7 @@ BOMB RUSH CYBERFUNK AUTOSPLITTER (PC)
 -------------------------------------
 
 Created by: Austin 'Auddy' Davenport and Loomeh
-Special thanks to: kitcarsonn, Christian Royle, Helix13, YellowBoy and Sooldy
+Special thanks to: Jomoko, kitcarsonn, Christian Royle, Helix13, YellowBoy and Sooldy
 */
 
 
@@ -54,7 +54,7 @@ state("Bomb Rush Cyberfunk")
 	// Version 1.0.19864 (patch 1 8/30/2023)
 	byte stageID : "UnityPlayer.dll", 0x01ADBA40, 0x30, 0x50, 0x28, 0x28, 0x70, 0x10, 0xBC;
 	byte objectiveID : "UnityPlayer.dll", 0x01ADBA40, 0x30, 0x50, 0x28, 0x90, 0x70, 0x28, 0x58;
-	byte wasHit : "mono-2.0-bdwgc.dll", 0x007270F8, 0x68, 0xA38, 0x30, 0x20, 0x208, 0x18;
+	byte SnakeBossState : "mono-2.0-bdwgc.dll", 0x007270F8, 0x68, 0xA38, 0x150, 0x138, 0x2E4;
 	bool loading : "UnityPlayer.dll", 0x01ADBA40, 0x68, 0x20, 0x140, 0x0, 0x120, 0x30, 0x57;
 }
 
@@ -66,7 +66,7 @@ init
 
 startup
 {
-	refreshRate = 240;
+	refreshRate = 180;
 
 	settings.CurrentDefaultParent = null;
 	settings.Add("gameMode", true, "Game Modes");
@@ -194,7 +194,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.wasHit == 1 && old.wasHit == 0)) && settings["finalAny"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossState == 8 && old.SnakeBossState != 8)) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -235,7 +235,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.wasHit == 1 && old.wasHit == 0)) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossState == 8 && old.SnakeBossState != 8)) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
