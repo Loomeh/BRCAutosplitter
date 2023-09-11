@@ -54,10 +54,8 @@ state("Bomb Rush Cyberfunk")
 	// Version 1.0.19864 (patch 1 8/30/2023)
 	byte stageID : "UnityPlayer.dll", 0x01ADBA40, 0x30, 0x50, 0x28, 0x28, 0x70, 0x10, 0xBC;
 	byte objectiveID : "UnityPlayer.dll", 0x01ADBA40, 0x30, 0x50, 0x28, 0x90, 0x70, 0x28, 0x58;
-	byte SnakeBossHealth: "UnityPlayer.dll", 0x01ADA088, 0xA0, 0x40, 0x60, 0x18, 0x20, 0xA0, 0x80;
-	byte inCutscene : "UnityPlayer.dll", 0x01A8DA80, 0x1D0, 0x18, 0x18, 0x18, 0x18, 0x29D;
+	byte SnakeBossState : "UnityPlayer.dll", 0x01B4AC20, 0x0, 0x88, 0x60, 0x20, 0x50, 0x70, 0x20, 0x2E4;
 	bool loading : "UnityPlayer.dll", 0x01ADBA40, 0x68, 0x20, 0x140, 0x0, 0x120, 0x30, 0x57;
-	bool inGraffitiGame : "mono-2.0-bdwgc.dll", 0x0072A200, 0xFF8, 0x20, 0x70, 0x79C;
 }
 
 init
@@ -196,7 +194,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1 || current.SnakeBossHealth == 0 && old.SnakeBossHealth == 2 && !current.inGraffitiGame && current.inCutscene == 0)) && settings["finalAny"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && current.SnakeBossState == 8) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -237,7 +235,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossHealth == 0 && old.SnakeBossHealth == 1 || current.SnakeBossHealth == 0 && old.SnakeBossHealth == 2 && !current.inGraffitiGame && current.inCutscene == 0)) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && current.SnakeBossState == 8) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
