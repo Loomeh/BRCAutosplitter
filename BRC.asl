@@ -194,7 +194,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && current.SnakeBossState == 8) && settings["finalAny"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossState == 8 && old.SnakeBossState != 8)) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -235,7 +235,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && current.SnakeBossState == 8) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossState == 8 && old.SnakeBossState != 8)) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
