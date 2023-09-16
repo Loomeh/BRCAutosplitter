@@ -250,7 +250,7 @@ isLoading
 reset
 {
 	// Reset if we go to Prologue from Main Menu
-	if((current.stageID == 8 && old.stageID == 255) && current.inCutscene)
+	if((current.stageID == 8 && old.stageID == 255) && (current.inCutscene && !current.loading))
 	{
 		vars.gameMode = 0;
 		return true;
