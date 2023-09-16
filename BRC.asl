@@ -56,6 +56,7 @@ state("Bomb Rush Cyberfunk")
 	byte objectiveID : "UnityPlayer.dll", 0x01ADBA40, 0x30, 0x50, 0x28, 0x90, 0x70, 0x28, 0x58;
 	byte SnakeBossState : "UnityPlayer.dll", 0x01B4AC20, 0x0, 0x88, 0x60, 0x20, 0x40, 0x10, 0x20, 0x2E4;
 	bool loading : "UnityPlayer.dll", 0x01ADBA40, 0x68, 0x20, 0x140, 0x0, 0x120, 0x30, 0x57;
+	bool inCutscene : "UnityPlayer.dll", 0x01A8DFC0, 0x28, 0x18, 0x18, 0x18, 0x10, 0x2A8;
 }
 
 init
@@ -194,7 +195,7 @@ split
 	||
 	((current.stageID == 5 && old.stageID == 9 && current.objectiveID == 11) && settings["chapter4Any"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossState == 8 && old.SnakeBossState != 8 && !old.loading)) && settings["finalAny"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && current.SnakeBossState == 8) && settings["finalAny"]))
 	{
 		return true;
 	}
@@ -235,7 +236,7 @@ split
 	||
 	((current.stageID == 7 && current.objectiveID == 13 && old.objectiveID == 12) && settings["endgameGlitchless"])
 	||
-	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && (current.SnakeBossState == 8 && old.SnakeBossState != 8 && !old.loading)) && settings["finalGlitchless"]))
+	((current.stageID == 7 && (current.objectiveID == 11 || current.objectiveID == 13) && current.SnakeBossState == 8) && settings["finalGlitchless"]))
 	{
 		return true;
 	}
@@ -249,7 +250,7 @@ isLoading
 reset
 {
 	// Reset if we go to Prologue from Main Menu
-	if(current.stageID == 8 && old.stageID == 255)
+	if((current.stageID == 8 && old.stageID == 255) && current.inCutscene)
 	{
 		vars.gameMode = 0;
 		return true;
