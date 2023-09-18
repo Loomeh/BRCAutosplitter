@@ -141,14 +141,14 @@ startup
 start
 {
 	// Settings for New Game start Any%
-	if(current.stageID == 8 && old.stageID == 255 && settings["Any"])
+	if(current.stageID == 8 && (current.inCutscene && old.loading) && settings["Any"])
 	{
 		vars.gameMode = 1;	// Set game mode
 		return true;
 	}
 	
 	// Settings for New Game start Glitchless
-	if(current.stageID == 8 && old.stageID == 255 && settings["Glitchless"])
+	if(current.stageID == 8 && (current.inCutscene && old.loading) && settings["Glitchless"])
 	{
 		vars.gameMode = 2;	// Set game mode
 		return true;
@@ -250,7 +250,7 @@ isLoading
 reset
 {
 	// Reset if we go to Prologue from Main Menu
-	if((current.stageID == 8 && old.stageID == 255) && (current.inCutscene && !current.loading))
+	if((current.stageID == 8) && (current.inCutscene && old.loading))
 	{
 		vars.gameMode = 0;
 		return true;
