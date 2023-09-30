@@ -143,9 +143,9 @@ startup
 		settings.Add("chapter2GlitchlessTool", true, "Chapter 2 Splits");
 	
 			settings.CurrentDefaultParent = "chapter2GlitchlessTool";
-		settings.Add("squareGlitchless",false,"Brink Terminal Start");
-		settings.Add("brinkGlitchless",false,"Dream Sequence 2 Start");
-		settings.Add("chapter2Glitchless",true,"Chapter 2 End");
+			settings.Add("squareGlitchless",false,"Brink Terminal Start");
+			settings.Add("brinkGlitchless",false,"Dream Sequence 2 Start");
+			settings.Add("chapter2Glitchless",true,"Chapter 2 End");
 		
 		// Chapter 3
 		settings.CurrentDefaultParent = "Glitchless";
@@ -204,7 +204,7 @@ split
 	if((vars.gameMode == 1) 	&&
 	(settings["prologueAny"] 	&& 	(current.stageID == 5 && old.stageID == 8))
 	||
-	(settings["hideoutEscape"]	&&	((current.stageID == 7 && old.stageID == 5) && (current.objectiveID == 0 || current.objectiveID == 1)))
+	(settings["hideoutEscape"]	&&	((current.stageID == 5 && (current.loading && !old.loading)) && current.objectiveID == 0))
 	||
 	(settings["hideoutAny"]		&&	((current.stageID == 4 && (old.stageID == 5 || old.stageID == 11)) && (current.objectiveID == 0 || current.objectiveID == 1 || current.objectiveID == 2)))
 	||
