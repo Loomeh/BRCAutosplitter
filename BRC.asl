@@ -204,7 +204,7 @@ split
 	if((vars.gameMode == 1) 	&&
 	(settings["prologueAny"] 	&& 	(current.stageID == 5 && old.stageID == 8))
 	||
-	(settings["hideoutEscape"]	&&	((current.stageID == 5 && (current.loading && !old.loading)) && current.objectiveID == 0))
+	(settings["hideoutEscape"]	&&	((current.stageID == 5 && !current.inCutscene && (current.loading && !old.loading)) && current.objectiveID == 0))
 	||
 	(settings["hideoutAny"]		&&	((current.stageID == 4 && (old.stageID == 5 || old.stageID == 11)) && (current.objectiveID == 0 || current.objectiveID == 1 || current.objectiveID == 2)))
 	||
