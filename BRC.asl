@@ -67,7 +67,7 @@ init
 
 startup
 {
-	refreshRate = 200;
+	refreshRate = 190;
 	vars.splashOver = true;
 	
 	// Any%
