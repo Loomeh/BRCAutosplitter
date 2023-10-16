@@ -3,8 +3,8 @@
 BOMB RUSH CYBERFUNK AUTOSPLITTER (PC)
 -------------------------------------
 
-Created by: Austin 'Auddy' Davenport and Loomeh
-Special thanks to: Ninja Cookie, kitcarsonn, Christian Royle, Helix13, YellowBoy and Sooldy
+Created by: Austin 'Auddy' Davenport, Loomeh and Ninja Cookie
+Special thanks to: kitcarsonn, Christian Royle, Helix13, YellowBoy and Sooldy
 */
 
 
