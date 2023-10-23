@@ -1,0 +1,19 @@
+-- Any%
+Prologue End,true
+Mataan Start,true
+Versum Hill Start,true
+Dream Sequence 1 Start,true
+Chapter 1 End,true
+Brink Terminal Start,true
+Dream Sequence 2 Start,true
+Chapter 2 End,true
+Millenium Mall Start,true
+Dream Sequence 3 Start,true
+Chapter 3 End,true
+Flesh Prince Versum End,false
+Flesh Prince Millenium End,false
+Flesh Prince Brink End,false
+Pyramid Island Start,false
+Dream Sequence 4 Start,true
+Chapter 4 End,true
+Final Boss Defeated,true
