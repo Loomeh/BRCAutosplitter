@@ -1,6 +1,5 @@
 -- Any%
 Prologue End,true
-Mataan Start,true
 Versum Hill Start,true
 Dream Sequence 1 Start,true
 Chapter 1 End,true
