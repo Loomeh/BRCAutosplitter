@@ -1,5 +1,6 @@
 -- Any%
 Prologue End,true
+Early Mataan (Splits when you enter Millenium Square),false
 Versum Hill Start,true
 Dream Sequence 1 Start,true
 Chapter 1 End,true
