@@ -67,6 +67,15 @@ init
 
 startup
 {
+	var deprecatedMessage = MessageBox.Show(
+    "This autosplitter is now considered deprecated in favor of SpeedrunUtils and is no longer receiving updates.\n" +
+    "You are still allowed to use this autosplitter in speedruns, but there is no guarantee of it being functional.\n\n" +
+    "https://github.com/Loomeh/SpeedrunUtils",
+    "BRC | Deprecation warning",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Warning
+	);
+
 	refreshRate = 190;
 	vars.splashOver = true;
 	
